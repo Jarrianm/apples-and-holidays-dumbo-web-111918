@@ -61,13 +61,13 @@ def all_supplies_in_holidays(holiday_hash)
 end
 def all_holidays_with_bbq(holiday_hash)
   bbq_array = []
-  holiday_supplies.each do |seaon, holiday|
-    holiday.each do |supply|
-      if supply.include?("BBQ")
-        bbq_array << supply
+    holiday_hash.each do |key, value|
+      value.each do |key2, value2|
+        if value2.include?("BBQ")
+          bbq_array << key2
+        end
       end
     end
+  bbq_array
   end
-bbq_array
-end
 end
